@@ -15,7 +15,7 @@ A simple and responsive **To‑Do List** application built using **HTML**, **CSS
 - JavaScript (Local Storage API)  
 
 ## 📸 Screenshots
-![To‑Do Screenshot](screenshot-todo.png)
+![To‑Do Screenshot](To-Do-Screenshot.jpg)
 
 ## 🔗 Live Demo
 [View Live Site](https://yourusername.github.io/todo-app)
