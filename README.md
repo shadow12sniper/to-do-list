@@ -18,7 +18,7 @@ A simple and responsive **To‑Do List** application built using **HTML**, **CSS
 ![To‑Do Screenshot](To-Do-Screenshot.jpg)
 
 ## 🔗 Live Demo
-[View Live Site](https://yourusername.github.io/todo-app)
+[View Live Site](https://shadow12sniper.github.io/to-do-list/)
 
 ## 📂 How to Use
 1. Clone the repo:  
