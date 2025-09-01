@@ -1,0 +1,185 @@
+/* Root variables for easy theming */
+:root {
+    --bg: #f8f9fb;
+    --primary: #2874a6;
+    --text: #232323;
+    --completed: #a9a9a9;
+    --border: #e0e0e0;
+    --shadow: rgba(40, 116, 166, 0.07) 0 6px 22px;
+    --cat-work: #ffb347;
+    --cat-personal: #ff6961;
+    --cat-shopping: #6ecb63;
+    --cat-other: #7d8fff;
+}
+
+/* Reset and body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-app {
+    background: #fff;
+    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 420px;
+    margin: 2rem;
+}
+
+.todo-app h1 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Form styling */
+#task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+#task-input, #category-select, #add-btn {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.7rem;
+    outline: none;
+}
+
+#task-input {
+    flex: 2;
+}
+
+#category-select {
+    flex: 1;
+    cursor: pointer;
+}
+
+#add-btn {
+    flex: 0;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+#add-btn:hover {
+    background: #185a89;
+}
+
+/* Task list styling */
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    background: #f5f8fa;
+    border-radius: 6px;
+    margin-bottom: 0.7rem;
+    padding: 0.5rem 0.7rem;
+    box-shadow: 0 1px 4px rgba(40,116,166,0.06);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.task-item.adding {
+    animation: fadeIn 0.3s;
+}
+
+.task-item.removing {
+    animation: fadeOut 0.35s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeOut {
+    from { opacity: 1; height: 48px;}
+    to { opacity: 0; height: 0; margin-bottom: 0;}
+}
+
+.category-tag {
+    width: 0.95em;
+    height: 0.95em;
+    border-radius: 3px;
+    margin-right: 0.7em;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.task-complete {
+    margin-right: 0.7em;
+    width: 1em;
+    height: 1em;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+    font-size: 1.05em;
+    transition: color 0.2s;
+}
+
+.completed .task-text {
+    text-decoration: line-through;
+    color: var(--completed);
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.1em;
+    margin-left: 0.2em;
+    cursor: pointer;
+    padding: 0.3em 0.4em;
+    border-radius: 3px;
+    transition: background 0.16s;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background: #eaeaea;
+    color: var(--primary);
+}
+
+/* Category colors */
+.category-tag[data-category="work"] { background: var(--cat-work);}
+.category-tag[data-category="personal"] { background: var(--cat-personal);}
+.category-tag[data-category="shopping"] { background: var(--cat-shopping);}
+.category-tag[data-category="other"] { background: var(--cat-other);}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .todo-app {
+        padding: 1rem 0.5rem 1.5rem 0.5rem;
+        max-width: 99vw;
+        margin: 0.5rem;
+    }
+    #task-form {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}
